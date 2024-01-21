@@ -37,6 +37,24 @@
                     <scalaVersion>${scala.version}</scalaVersion>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>3.3.1</version>
+                <configuration>
+                    <filesets>
+                    <fileset>
+                        <directory>${basedir}</directory>
+                        <includes>
+                            <include>temp</include>
+                        </includes>
+                        <excludes>
+                            <exclude>spark-file-processor.log</exclude>
+                        </excludes>
+                    </fileset>
+                    </filesets>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
